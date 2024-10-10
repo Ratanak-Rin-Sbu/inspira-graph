@@ -9,6 +9,12 @@ const notoSerifKhmer = localFont({
   weight: "400",
 });
 
+const dmSans = localFont({
+  src: "./fonts/DMSansV.ttf",
+  variable: "--font-dm-sans",
+  weight: "400",
+});
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSerifKhmer.variable} ${roboto.variable} antialiased`}
+        className={`${notoSerifKhmer.variable} ${dmSans.variable} ${roboto.variable} antialiased`}
       >
         <div className="container">
           <div className="wrapper">
