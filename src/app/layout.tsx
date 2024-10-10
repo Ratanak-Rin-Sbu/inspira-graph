@@ -30,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${notoSerifKhmer.variable} ${roboto.variable} antialiased`}
       >
-        {children}
+        <div className="container">
+          <div className="wrapper">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
