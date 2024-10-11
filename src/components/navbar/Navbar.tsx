@@ -13,7 +13,7 @@ const Navbar = () => {
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
-            padding: 0,
+            padding: "0 5px",
           }}
           variant="text"
           color="inherit"
@@ -26,7 +26,7 @@ const Navbar = () => {
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
-            padding: 0,
+            padding: "0 5px",
           }}
           variant="text"
           color="inherit"
@@ -47,8 +47,20 @@ const Navbar = () => {
           អំពី
         </Button>
       </div>
-      <div className={`${styles.auth} text-2xl`}>
-        លកអុីន
+      <div className={styles.auth}>
+        <Button
+          sx={{
+            fontSize: '1.35rem',
+            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+            lineHeight: 1.8,
+            letterSpacing: '0.05em',
+            // padding: 0,
+          }}
+          variant="text"
+          color="inherit"
+        >
+          លកអុីន
+        </Button>
       </div>
     </div>
   )
