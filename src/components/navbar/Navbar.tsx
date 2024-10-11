@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className={styles.navigations}>
         <Button
           sx={{
-            fontSize: '1.6rem',
+            fontSize: '1.5rem',
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
@@ -18,11 +18,11 @@ const Navbar = () => {
           variant="text"
           color="inherit"
         >
-          ស្នាមអក្សរ
+          សំណេរ
         </Button>
         <Button
           sx={{
-            fontSize: '1.6rem',
+            fontSize: '1.5rem',
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
@@ -35,11 +35,11 @@ const Navbar = () => {
         </Button>
         <Button
           sx={{
-            fontSize: '1.6rem',
+            fontSize: '1.5rem',
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
-            padding: 0,
+            padding: "0 5px"
           }}
           variant="text"
           color="inherit"
@@ -54,7 +54,7 @@ const Navbar = () => {
             fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
             lineHeight: 1.8,
             letterSpacing: '0.05em',
-            // padding: 0,
+            // padding: "0 5px",
           }}
           variant="text"
           color="inherit"

@@ -40,11 +40,9 @@ export default function RootLayout({
         className={`${notoSerifKhmer.variable} ${dmSans.variable} ${roboto.variable} antialiased`}
       >
         <div className="container">
-          <div className="wrapper">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <Navbar />
+          {children}
+          <Footer />
         </div>
       </body>
     </html>
