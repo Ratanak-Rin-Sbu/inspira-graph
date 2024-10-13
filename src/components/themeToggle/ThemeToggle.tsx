@@ -2,20 +2,38 @@
 
 import Image from "next/image"
 import styles from "./themeToggle.module.css"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ThemeContext } from "@/context/ThemeContext";
 
 const ThemeToggle = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggle } = useContext(ThemeContext);
+  const [animate, setAnimate] = useState(false);
 
-  console.log(theme); 
-  
+  console.log(theme);
 
   return (
-    <div className={styles.container}>
-      <Image src="/moon.png" alt="" width={16} height={16} />
-      <div className={styles.ball}></div>
-      <Image src="/sun.png" alt="" width={16} height={16} />
+    <div 
+      className="styles.container"
+      onClick={() => {
+        toggle(); 
+        setAnimate(true);
+        setTimeout(() => setAnimate(false), 400);
+      }}
+    >
+      {theme === "dark" ? 
+        (<Image
+          src="/sun.png"
+          alt="" width={18} 
+          className={animate ? styles.jumpAnimation : ""}
+          height={18} 
+          style={{transition: "all 0.8s", cursor: "pointer"}}/>) :
+        (<Image 
+          src="/moon.png" 
+          alt="" width={18} 
+          className={animate ? styles.jumpAnimation : ""}
+          height={18}  
+          style={{transition: "all 0.8s", cursor: "pointer"}}/>)
+      }
     </div>
   )
 }

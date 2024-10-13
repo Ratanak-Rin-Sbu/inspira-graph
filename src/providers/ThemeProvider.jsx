@@ -11,13 +11,11 @@ function ThemeProvider({ children }) {
     setHasMounted(true);
   }, []);
 
-  if (!hasMounted) {
-    return null;
+  if (hasMounted) {
+    return (
+      <div className={theme}>{children}</div>
+    )
   }
-
-  return (
-    <div className={theme}>{children}</div>
-  )
 }
 
 export default ThemeProvider
