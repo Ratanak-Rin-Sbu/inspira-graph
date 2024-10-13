@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./navbar.module.css"
 import { Button } from '@mui/material'
+import ThemeToggle from "../themeToggle/ThemeToggle";
 
 const Navbar = () => {
   return (
@@ -48,6 +49,7 @@ const Navbar = () => {
         </Button>
       </div>
       <div className={styles.auth}>
+        <ThemeToggle />
         <Button
           sx={{
             fontSize: '1.35rem',
