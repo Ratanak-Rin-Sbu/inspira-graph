@@ -5,6 +5,8 @@ import "./globals.css";
 
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import { ThemeContextProvider } from "@/context/ThemeContext";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const notoSerifKhmer = localFont({
   src: "./fonts/NotoSerifKhmer.ttf",
@@ -39,11 +41,17 @@ export default function RootLayout({
       <body
         className={`${notoSerifKhmer.variable} ${dmSans.variable} ${roboto.variable} antialiased`}
       >
-        <div className="container">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <div className="container">
+              {/* <div className="wrapper"> */}
+                <Navbar />
+                {children}
+                <Footer />
+              </div>
+            {/* </div> */}
+          </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
