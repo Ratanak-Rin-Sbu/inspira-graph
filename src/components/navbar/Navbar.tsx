@@ -1,69 +1,38 @@
-import React from 'react'
-import styles from "./navbar.module.css"
-import { Button } from '@mui/material'
-import ThemeToggle from "../themeToggle/ThemeToggle";
+import React from 'react';
+import styles from "./navbar.module.css";
+import { Button } from '@mui/material';
+import Auth from '../auth/Auth';
 
 const Navbar = () => {
   return (
     <div className={`${styles.container} khmer-text text-3xl`}>
       <div className={styles.logo}>អក្ខរាវិរុទ្ធ</div>
+      
       <div className={styles.navigations}>
         <Button
-          sx={{
-            fontSize: '1.5rem',
-            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-            lineHeight: 1.8,
-            letterSpacing: '0.05em',
-            padding: "0 5px",
-          }}
+          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
           variant="text"
           color="inherit"
         >
           សំណេរ
         </Button>
         <Button
-          sx={{
-            fontSize: '1.5rem',
-            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-            lineHeight: 1.8,
-            letterSpacing: '0.05em',
-            padding: "0 5px",
-          }}
+          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
           variant="text"
           color="inherit"
         >
           សហគមន៍
         </Button>
         <Button
-          sx={{
-            fontSize: '1.5rem',
-            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-            lineHeight: 1.8,
-            letterSpacing: '0.05em',
-            padding: "0 5px"
-          }}
+          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
           variant="text"
           color="inherit"
         >
           អំពី
         </Button>
       </div>
-      <div className={styles.auth}>
-        <ThemeToggle />
-        <Button
-          sx={{
-            fontSize: '1.35rem',
-            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-            lineHeight: 1.8,
-            letterSpacing: '0.05em',
-            // padding: "0 5px",
-          }}
-          variant="text"
-          color="inherit"
-        >
-          លកអុីន
-        </Button>
-      </div>
+
+      <Auth />
     </div>
   )
 }

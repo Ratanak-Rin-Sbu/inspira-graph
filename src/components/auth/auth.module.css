@@ -1,0 +1,59 @@
+.auth {
+  display: flex;
+  gap: 30px;
+  color: gray;
+  text-align: right;
+  align-items: center;
+}
+
+.auth Button {
+  font-size: 1.35rem;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+
+.mobileMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: none;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.responsiveMenu {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: var(--background);
+  height: calc(100vh - 100px);
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  font-size: 1.5rem;
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .auth {
+    gap: 15px
+  } 
+}
+
+@media screen and (max-width: 935px) {
+  .menu {
+    display: block;
+  }
+  .responsiveMenu {
+    display: flex;
+  }
+  .auth {
+    display: none;
+  }
+}

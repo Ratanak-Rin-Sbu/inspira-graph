@@ -24,9 +24,6 @@ body {
   margin: 0;
 
   overflow: hidden;
-  /* max-width: 1336px;
-  margin: 0 auto;
-  padding: 0 80px; */
 }
 
 a {
@@ -53,45 +50,15 @@ a {
   min-height: 100vh;
   background-color: var(--background);
   color: var(--textColor);
-  max-width: 1336px;
+  max-width: 1136px;
   margin: 0 auto;
 }
 
-/* .wrapper {
-  max-width: 1336px;
-  margin: 0 auto;
-} */
-
-/* @media screen and (max-width: 1336px) {
-  .wrapper {
-    max-width: 1280px;
-    padding: 0 40px;
+@media screen and (max-width: 1136px) {
+  .container {
+    padding: 0 20px;
   }
 }
-
-@media screen and (max-width: 1280px) {
-  .wrapper {
-    max-width: 1024px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .wrapper {
-    max-width: 768px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .wrapper {
-    max-width: 640px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .wrapper {
-    max-width: 475px;
-  }
-} */
 
 .khmer-text {
   font-family: var(--font-noto-serif-khmer), sans-serif; /* Font for Khmer characters */

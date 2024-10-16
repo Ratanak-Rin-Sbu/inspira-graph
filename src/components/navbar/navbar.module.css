@@ -14,16 +14,18 @@
   gap: 60px;
 }
 
-.auth {
-  display: flex;
-  gap: 30px;
-  color: gray;
-  text-align: right;
-  align-items: center;
+.navigations Button {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  padding: 0 5px,
 }
 
-@media screen and (max-width: 1280px) {
-  .auth {
-    gap: 15px
-  } 
+@media screen and (max-width: 935px) {
+  .logo {
+    font-size: 1.7rem;
+  }
+  .navigations {
+    display: none;
+  }
 }
