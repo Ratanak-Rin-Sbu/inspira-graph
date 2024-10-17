@@ -23,6 +23,11 @@ const Auth = () => {
           <Button
             sx={{
               fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              padding: "0 5px",
+              '&:hover': {
+                transition: "200ms",
+                borderRadius: "5px",
+              }
             }}
             variant="text"
             color="inherit"
@@ -36,6 +41,11 @@ const Auth = () => {
           <Button
             sx={{
               fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              padding: "0 5px",
+              '&:hover': {
+                transition: "200ms",
+                borderRadius: "5px",
+              }
             }}
             variant="text"
             color="inherit"

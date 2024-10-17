@@ -10,21 +10,42 @@ const Navbar = () => {
       
       <div className={styles.navigations}>
         <Button
-          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
+          sx={{ 
+            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+            padding: "0 5px",
+            '&:hover': {
+              transition: "200ms",
+              borderRadius: "5px",
+            }
+          }}
           variant="text"
           color="inherit"
         >
           សំណេរ
         </Button>
         <Button
-          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
+          sx={{ 
+            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+            padding: "0 5px",
+            '&:hover': {
+              transition: "200ms",
+              borderRadius: "5px",
+            }
+          }}
           variant="text"
           color="inherit"
         >
           សហគមន៍
         </Button>
         <Button
-          sx={{ fontFamily: 'var(--font-noto-serif-khmer), sans-serif' }}
+          sx={{ 
+            fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+            padding: "0 5px",
+            '&:hover': {
+              transition: "200ms",
+              borderRadius: "5px",
+            }
+          }}
           variant="text"
           color="inherit"
         >
