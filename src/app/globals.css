@@ -10,13 +10,6 @@
   --softTextColor: #626262;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -39,8 +32,8 @@ a {
 }
 
 .dark {
-  --background: #0f172a;
-  --textColor: #ddd;
+  --background: #36454F;
+  --textColor: whitesmoke;
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
   background-color: var(--background);

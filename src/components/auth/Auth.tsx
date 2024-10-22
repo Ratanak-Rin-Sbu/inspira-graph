@@ -1,10 +1,9 @@
 "use client"
 
 import React, { useState } from 'react';
-import Link from "next/link";
 import styles from "./auth.module.css";
-import { Button, useMediaQuery } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
+import { useMediaQuery, Box, Link } from '@mui/material'
+import { Logout, Login , Menu, Close } from '@mui/icons-material';
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 const Auth = () => {
@@ -20,62 +19,43 @@ const Auth = () => {
       {status === "notauthenticated" ? (
         <div className={styles.auth}>
           <ThemeToggle />
-          <Button
-            sx={{
-              fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-              padding: "0 5px",
-              '&:hover': {
-                transition: "200ms",
-                borderRadius: "5px",
-              }
-            }}
-            variant="text"
-            color="inherit"
-          >
-            លកអុីន
-          </Button>
+          <Login sx={{ cursor: "pointer" }}/>
         </div>
       ) : (
         <div className={styles.auth}>
           <ThemeToggle />
-          <Button
-            sx={{
-              fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-              padding: "0 5px",
-              '&:hover': {
-                transition: "200ms",
-                borderRadius: "5px",
-              }
-            }}
-            variant="text"
-            color="inherit"
-          >
-            លកអោត
-          </Button>
+          <Logout sx={{ cursor: "pointer" }}/>
         </div>
       )}
 
       {/* MOBILE MENU BUTTON */}
       {isMobile && (
-        <div className={styles.mobileMenu}>
-          <ThemeToggle />
-          <MenuIcon
-            className={styles.menu}
-            onClick={() => setOpen(!open)} 
-            sx={{ fontSize: '2rem' }}
-          />
-        </div>
+        <>
+          <div className={styles.mobileMenu}>
+            <ThemeToggle />
+            <Menu
+              className={styles.menu}
+              onClick={() => setOpen(!open)} 
+              sx={{ fontSize: '2rem' }}
+            />
+          </div>
+          <Box className={styles.overlay} display={open ? 'block' : 'none'}></Box>
+        </>
       )}
 
       {open && (
         <div className={styles.responsiveMenu}>
-          <Link href="/">សំណេរ</Link>
-          <Link href="/">សហគមន៍</Link>
-          <Link href="/">អំពី</Link>
+          <Box display="flex" justifyContent="space-between" mb="40px">
+            <Box className='khmer-text' fontSize="1.7rem">អក្ខរាវិរុទ្ធ</Box>
+            <Close onClick={() => setOpen(!open)} sx={{ fontSize: '2rem', m: 'auto 0' }}/>
+          </Box>
+          <Box mb="20px">សំណេរ</Box>
+          <Box mb="20px">សហគមន៍</Box>
+          <Box mb="20px">អំពី</Box>
           {status === "notauthenticated" ? (
-            <Link href="/">លកអុីន</Link>
+            <Box>លកអ៊ីន</Box>
           ) : (
-            <Link href="/">លកអោត</Link>
+            <Box>លកអោត</Box>
           )}
         </div>
       )}
