@@ -5,7 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 const SearchBar: React.FC = () => {
   return (
-    <Box>
+    <Box mb="40px">
       <TextField
         variant='filled'
         sx={{
@@ -14,7 +14,7 @@ const SearchBar: React.FC = () => {
             backgroundColor: '#e6e3e3',
             height: '50px',
             fontSize: '1.25rem',
-            pb: '10px',
+            pb: '15px',
             '&:before': {
               borderBottomColor: '#d1cece',
             },
@@ -26,6 +26,11 @@ const SearchBar: React.FC = () => {
                 display: 'none',
               },
             },
+            '& .MuiInputBase-input::placeholder': {
+              fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              lineHeight: '1.8',
+              letterSpacing: '0.07em',
+            },
           },
         }}
         InputProps={{
@@ -35,7 +40,7 @@ const SearchBar: React.FC = () => {
             </InputAdornment>
           ),
         }}
-        placeholder="Search..." // Place this outside of InputProps to avoid deprecation warning
+        placeholder="តើអ្នកកំពុងស្វែងរកសំណេរណាមួយឬ?"
       />
     </Box>
   );
