@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, TextField } from '@mui/material';
+import { Box, TextField, InputAdornment } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import InputAdornment from '@mui/material/InputAdornment';
 
-const SearchBar: React.FC = () => {
+type Props = {}
+
+const SearchBar: React.FC = (props: Props) => {
   return (
     <Box mb="40px">
       <TextField

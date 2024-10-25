@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
           © ២០២៤​​​​​​​​​​​​​​​​ អក្ខរាវិរុទ្ធ By Veron. រក្សាគ្រប់យ៉ាង។
         </Box>
 
-        <Box className='khmer-text text-sm' color="GrayText" sx={{ mb: "10px" }}>
+        <Box className='khmer-text text-sm' color="GrayText" sx={{ pb: "10px" }}>
           ដោយចូលប្រើប្រាស់ អ្នកយល់ព្រមថាអ្នកទទួលបាននូវការយល់ព្រមនឹងលក្ខខណ្ឌ និងសេវាកម្ម។
         </Box>
       </Box>

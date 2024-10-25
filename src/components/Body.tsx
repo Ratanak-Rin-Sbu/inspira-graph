@@ -1,6 +1,7 @@
 import React from 'react';
 import Intro from "@/components/Intro";
 import SearchBar from "@/components/SearchBar";
+import TopicWrapper from './TopicWrapper';
 import { Box } from '@mui/material';
 
 const Body = () => {
@@ -8,6 +9,7 @@ const Body = () => {
     <Box minHeight="80vh">
       <Intro />
       <SearchBar />
+      <TopicWrapper />
     </Box>
   )
 }
