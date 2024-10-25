@@ -13,7 +13,8 @@ const Footer: React.FC = () => {
           sx = {{
             display: "flex",
             justifyContent: "space-between",
-            mb: '15px'
+            mb: '15px',
+            mt: '5px'
           }}
         >
           <div className="khmer-text text-2xl">អក្ខរាវិរុទ្ធ</div>
