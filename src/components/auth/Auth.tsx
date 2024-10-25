@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from "./auth.module.css";
-import { useMediaQuery, Box, Link } from '@mui/material'
+import { useMediaQuery, Box } from '@mui/material'
 import { Logout, Login , Menu, Close } from '@mui/icons-material';
 import ThemeToggle from "../themeToggle/ThemeToggle";
 

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 
-import { Box, Typography, Divider } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import { Instagram, LinkedIn, GitHub } from '@mui/icons-material';
 
 const Footer: React.FC = () => {

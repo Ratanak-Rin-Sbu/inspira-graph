@@ -2,9 +2,7 @@ import React from 'react';
 import { Box, TextField, InputAdornment } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
-type Props = {}
-
-const SearchBar: React.FC = (props: Props) => {
+const SearchBar= () => {
   return (
     <Box mb="40px">
       <TextField

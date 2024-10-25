@@ -5,10 +5,8 @@ import Topic from './Topic';
 import { Box } from '@mui/material';
 import { Storefront, Restaurant } from '@mui/icons-material';
 
-type Props = {}
-
-const TopicWrapper = (props: Props) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const TopicWrapper = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleTopicClick = (index: number) => {
     setActiveIndex(index);

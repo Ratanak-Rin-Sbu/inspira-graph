@@ -17,7 +17,6 @@ const Topic: React.FC<TopicProps> = ({ icon: Icon, label, active, onClick}) => {
         mr: "20px",
         borderRadius: '50px',
         minWidth: "120px",
-        // p: "10px 0",
         fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
         lineHeight: '1.8',
         letterSpacing: '0.07em',
