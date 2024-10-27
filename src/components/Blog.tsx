@@ -20,17 +20,23 @@ const Blog: React.FC<BlogProps> = ({ imgSrc, location, title }) => {
         boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'
       }}
     >
-      <Box flexBasis="60%">
+      <Box
+        sx={{
+          width: '100%',
+          height: 250,
+          position: 'relative',
+          overflow: 'hidden',
+          borderRadius: "5px 5px 0 0",
+        }}
+      >
         <Image
           src={imgSrc}
           alt=""
-          layout="responsive"
-          width={300}
-          height={300}
-          style={{ borderRadius: "5px 5px 0 0" }}
+          layout="fill"
+          objectFit='cover'
         />
       </Box>
-      <Box flexBasis="40%" p="10px 0 10px 10px">
+      <Box p="10px 0 10px 10px">
         <Box
           className='khmer-text'
           sx={{
