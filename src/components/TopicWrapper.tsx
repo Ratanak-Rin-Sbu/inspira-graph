@@ -13,7 +13,7 @@ const TopicWrapper = () => {
   };
 
   return (
-    <Box sx={{m: "20px 0"}} display="flex">
+    <Box sx={{p: "20px 0"}} display="flex">
       <Topic
         icon={Storefront}
         label="កាហ្វេ"

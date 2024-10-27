@@ -1,11 +1,14 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import ImageAnn from "../../public/images/imageAnn.png"
 
-type Props = {}
+type BlogProps = {
+  imgSrc: string;
+  location: string;
+  title: string;
+};
 
-const Blog = (props: Props) => {
+const Blog: React.FC<BlogProps> = ({ imgSrc, location, title }) => {
   return (
     <Box
       display="flex"
@@ -19,7 +22,7 @@ const Blog = (props: Props) => {
     >
       <Box flexBasis="60%">
         <Image
-          src="/images/cafe.jpg"
+          src={imgSrc}
           alt=""
           layout="responsive"
           width={300}
@@ -46,7 +49,7 @@ const Blog = (props: Props) => {
             overflow: 'hidden',
           }}
         >
-          ស៊ីសូកាហ្វេ​  បឹងកេងកង៣​​​ ភ្នំពេញ
+          {location}
         </Box>
         <Box
           className='khmer-text'
@@ -62,7 +65,7 @@ const Blog = (props: Props) => {
             lineHeight: 1.5,
           }}
         >
-          ស៊ីសូកាហ្វេ: កន្លែងសម្រាកសម្រាប់ការងារសង្គម និងការផ្តល់បទពិសោធន៍ថ្មីៗនៅកម្រិតខ្ពស់
+          {title}
         </Box>
       </Box>
     </Box>
