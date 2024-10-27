@@ -31,11 +31,12 @@
   width: 55%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1200;
+  z-index: 2000 !important;
 }
 
 .responsiveMenu {
-  position: absolute;
+  position: fixed;
+  z-index: 3000;
   background-color: whitesmoke;
   top: 0;
   right: 0;

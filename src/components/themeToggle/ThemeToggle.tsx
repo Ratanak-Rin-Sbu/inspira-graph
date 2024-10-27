@@ -22,13 +22,13 @@ const ThemeToggle = () => {
     >
       {theme === "dark" ? 
         (<Image
-          src="/sun.png"
+          src="/images/sun.png"
           alt="" width={18} 
           className={animate ? styles.jumpAnimation : ""}
           height={18} 
           style={{transition: "all 0.8s", cursor: "pointer"}}/>) :
         (<Image 
-          src="/moon.png" 
+          src="/images/moon.png" 
           alt="" width={18} 
           className={animate ? styles.jumpAnimation : ""}
           height={18}  

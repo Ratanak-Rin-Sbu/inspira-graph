@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         </Box>
 
         <Box  className='khmer-text text-md' marginBottom="5px">
-          © ២០២៤​​​​​​​​​​​​​​​​ អក្ខរាវិរុទ្ធ By Veron. រក្សាគ្រប់យ៉ាង។
+          © ២០២៤​​​​​​​​​​​​​​​​ អក្ខរាវិរុទ្ធ By Veron. រក្សាសិទ្ធគ្រប់យ៉ាង។
         </Box>
 
         <Box className='khmer-text text-sm' color="GrayText" sx={{ pb: "10px" }}>
