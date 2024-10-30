@@ -4,11 +4,12 @@ import Image from 'next/image';
 
 type BlogProps = {
   imgSrc: string;
+  name: string;
   location: string;
   title: string;
 };
 
-const Blog: React.FC<BlogProps> = ({ imgSrc, location, title }) => {
+const Blog: React.FC<BlogProps> = ({ imgSrc, name, location, title }) => {
   return (
     <Box
       display="flex"
@@ -23,7 +24,10 @@ const Blog: React.FC<BlogProps> = ({ imgSrc, location, title }) => {
       <Box
         sx={{
           width: '100%',
-          height: 250,
+          height: {
+            md: 250,
+            xs: 120,
+          },
           position: 'relative',
           overflow: 'hidden',
           borderRadius: "5px 5px 0 0",
@@ -55,7 +59,7 @@ const Blog: React.FC<BlogProps> = ({ imgSrc, location, title }) => {
             overflow: 'hidden',
           }}
         >
-          {location}
+          {name + ' ' + location}
         </Box>
         <Box
           className='khmer-text'
