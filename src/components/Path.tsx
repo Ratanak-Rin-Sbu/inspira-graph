@@ -1,0 +1,49 @@
+"use client"
+
+import React from 'react'
+import { Box } from '@mui/material'
+import styled from '@emotion/styled';
+
+const PathBox = styled(Box)(({}) => ({
+  position: "relative",
+  overflow: "hidden",
+  marginRight: "10px",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "0%",
+    height: "2px",
+    backgroundColor: "#47AEC3",
+    transition: "width 0.2s ease-in-out",
+  },
+  "&:hover::after": {
+    width: "100%",
+  },
+}));
+
+const Path = () => {
+  return (
+    <Box
+      sx={{
+        fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+        letterSpacing: '0.07em',
+        fontSize: "1.2rem",
+        color: "#47AEC3",
+        display: "flex",
+        mb: "20px"
+      }}
+    >
+      <PathBox>
+        ទំព័រដេីម
+      </PathBox>
+      <Box mr="10px">{">"}</Box>
+      <PathBox>
+      ​ហាងកាហ្វេ
+      </PathBox>
+    </Box>
+  )
+}
+
+export default Path

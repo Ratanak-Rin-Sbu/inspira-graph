@@ -18,12 +18,11 @@ const Topic: React.FC<TopicProps> = ({ icon: Icon, label, active, onClick}) => {
         borderRadius: '50px',
         minWidth: "120px",
         fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-        lineHeight: '1.8',
         letterSpacing: '0.07em',
         fontSize: "1rem",
-        backgroundColor: active ? "#ececec" : "#dcf0fa",
-        border: active ? "2px solid black" : "1.5px solid #c8c8c8",
-        color: "black",
+        backgroundColor: active ? "#ececec" : "#57c4ff31", // #57c4ff31, #da85c731, #7fb88133, #ff795736, #ffb05f45, #5e4fff31
+        border: active ? "2px solid #808080" : "1px solid #c8c8c8",
+        color: active ? "black" : "#808080",
       }}
       startIcon={<Icon sx={{ color: active ? 'black' : '#409ac0' }} />}
       onClick={onClick}

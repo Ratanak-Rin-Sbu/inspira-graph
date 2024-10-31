@@ -5,7 +5,6 @@ import "./globals.css";
 
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
-import Body from "@/components/Body";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
 
@@ -45,13 +44,11 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ThemeProvider>
             <div className="container">
-              {/* <div className="wrapper"> */}
-                <Navbar />
-                <Body />
-                {children}
-                <Footer />
-              </div>
-            {/* </div> */}
+              <Navbar />
+              {/* <Body /> */}
+              {children}
+              <Footer />
+            </div>
           </ThemeProvider>
         </ThemeContextProvider>
       </body>

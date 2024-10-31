@@ -1,24 +1,36 @@
+"use client"
+
 import React from 'react';
 import { Box } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-type BlogProps = {
+type BlogCardProps = {
   imgSrc: string;
   name: string;
   location: string;
   title: string;
+  blogId: number;
 };
 
-const Blog: React.FC<BlogProps> = ({ imgSrc, name, location, title }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ imgSrc, name, location, title, blogId }) => {
+  const router = useRouter();
+
+  const navigatePage = () => {
+    router.push(`/blog/${blogId}`);
+  };
+
   return (
     <Box
+      onClick={navigatePage}
       display="flex"
       flexDirection="column"
       sx={{
         border: "1px solid #e3e0e0",
         borderRadius: "5px",
         width: '100%',
-        boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'
+        boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+        cursor: 'pointer',
       }}
     >
       <Box
@@ -82,4 +94,4 @@ const Blog: React.FC<BlogProps> = ({ imgSrc, name, location, title }) => {
   )
 }
 
-export default Blog
+export default BlogCard
