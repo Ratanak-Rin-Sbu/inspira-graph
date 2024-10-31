@@ -5,19 +5,19 @@ import { Box } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-type BlogCardProps = {
+type EntryCardProps = {
   imgSrc: string;
   name: string;
   location: string;
   title: string;
-  blogId: number;
+  entryId: number;
 };
 
-const BlogCard: React.FC<BlogCardProps> = ({ imgSrc, name, location, title, blogId }) => {
+const EntryCard: React.FC<EntryCardProps> = ({ imgSrc, name, location, title, entryId }) => {
   const router = useRouter();
 
   const navigatePage = () => {
-    router.push(`/blog/${blogId}`);
+    router.push(`/entry/${entryId}`);
   };
 
   return (
@@ -94,4 +94,4 @@ const BlogCard: React.FC<BlogCardProps> = ({ imgSrc, name, location, title, blog
   )
 }
 
-export default BlogCard
+export default EntryCard

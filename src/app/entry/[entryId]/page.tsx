@@ -2,10 +2,10 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 import Path from '@/components/Path';
-import BlogDetail from '@/components/BlogDetail';
+import EntryDetail from '@/components/EntryDetail';
 
-const Blog = ({ params }: { params: { blogId: string } }) => {
-  const { blogId } = params;
+const Entry = ({ params }: { params: { entryId: string } }) => {
+  const { entryId } = params;
 
   return (
     <Box 
@@ -47,9 +47,9 @@ const Blog = ({ params }: { params: { blogId: string } }) => {
         ថ្ងៃព្រហស្បតិ៍ ទី៣១ ខែតុលា ឆ្នាំ២០២៤
       </Box>
 
-      <BlogDetail />
+      <EntryDetail />
     </Box>
   );
 };
 
-export default Blog;
+export default Entry;

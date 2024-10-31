@@ -4,7 +4,7 @@ import React from 'react'
 import { Box } from '@mui/material';
 import { LocationOn, Call, Language, Instagram } from '@mui/icons-material';
 
-const BlogDetail = () => {
+const EntryDetail = () => {
   return (
     <Box
       sx={{
@@ -110,4 +110,4 @@ const BlogDetail = () => {
   )
 }
 
-export default BlogDetail
+export default EntryDetail;
