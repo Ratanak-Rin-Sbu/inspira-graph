@@ -1,12 +1,15 @@
 "use client"
 
 import React, { useState } from 'react';
-import styles from "./auth.module.css";
+import { useRouter } from 'next/navigation';
 import { useMediaQuery, Box } from '@mui/material'
 import { Logout, Login , Menu, Close } from '@mui/icons-material';
+
+import styles from "./auth.module.css";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 const Auth = () => {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   // temporary
@@ -19,7 +22,7 @@ const Auth = () => {
       {status === "notauthenticated" ? (
         <div className={styles.auth}>
           <ThemeToggle />
-          <Login sx={{ cursor: "pointer" }}/>
+          <Login sx={{ cursor: "pointer" }} onClick={() => router.push('/login')}/>
         </div>
       ) : (
         <div className={styles.auth}>
@@ -53,7 +56,7 @@ const Auth = () => {
           <Box mb="20px">សហគមន៍</Box>
           <Box mb="20px">អំពី</Box>
           {status === "notauthenticated" ? (
-            <Box>លកអ៊ីន</Box>
+            <Box onClick={() => router.push('/login')}>លកអ៊ីន</Box>
           ) : (
             <Box>លកអោត</Box>
           )}

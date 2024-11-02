@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className={`${styles.container} khmer-text text-3xl`}>
-      <div className={styles.logo} onClick={navigatePage}>អក្ខរាវិរុទ្ធ</div>
+      <div className={styles.logo} onClick={() => router.push('/')}>អក្ខរាវិរុទ្ធ</div>
       
       <div className={styles.navigations}>
         <Button

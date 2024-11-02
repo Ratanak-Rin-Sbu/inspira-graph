@@ -8,6 +8,7 @@
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --borderColor: #e5e7eb;
 }
 
 body {
@@ -34,13 +35,15 @@ a {
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --borderColor: #e5e7eb;
 }
 
 .dark {
   --background: #36454F;
   --textColor: whitesmoke;
-  --softBg: #1f273a;
+  --softBg: #596873;
   --softTextColor: #a6a6a6;
+  --borderColor: #4A5A63;
   background-color: var(--background);
 }
 
