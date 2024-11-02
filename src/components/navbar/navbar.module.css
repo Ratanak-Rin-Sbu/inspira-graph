@@ -7,6 +7,12 @@
 
 .logo {
   align-items: center;
+  cursor: pointer;
+}
+
+.logo:active {
+  background-color: #b1c2bfce;
+  border-radius: 10px;
 }
 
 .navigations {

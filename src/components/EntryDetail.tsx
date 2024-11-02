@@ -16,7 +16,7 @@ const EntryDetail = () => {
         },
         m: {
           md: "50px",
-          xs: "0",
+          xs: "0 0 30px 0",
         },
       }}
     >

@@ -1,12 +1,22 @@
+"use client"
+
 import React from 'react';
-import styles from "./navbar.module.css";
+import { useRouter } from 'next/navigation';
 import { Button } from '@mui/material';
+
+import styles from "./navbar.module.css";
 import Auth from '../auth/Auth';
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const navigatePage = () => {
+    router.push('/');
+  };
+
   return (
     <div className={`${styles.container} khmer-text text-3xl`}>
-      <div className={styles.logo}>អក្ខរាវិរុទ្ធ</div>
+      <div className={styles.logo} onClick={navigatePage}>អក្ខរាវិរុទ្ធ</div>
       
       <div className={styles.navigations}>
         <Button

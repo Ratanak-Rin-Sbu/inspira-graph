@@ -3,6 +3,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import styled from '@emotion/styled';
+import { useRouter } from 'next/navigation';
 
 const PathBox = styled(Box)(({}) => ({
   position: "relative",
@@ -24,6 +25,12 @@ const PathBox = styled(Box)(({}) => ({
 }));
 
 const Path = () => {
+  const router = useRouter();
+
+  const navigatePage = () => {
+    router.push('/');
+  };
+
   return (
     <Box
       sx={{
@@ -35,8 +42,8 @@ const Path = () => {
         mb: "20px"
       }}
     >
-      <PathBox>
-        ទំព័រដេីម
+      <PathBox onClick={navigatePage}>
+        ទំព័រដើម
       </PathBox>
       <Box mr="10px">{">"}</Box>
       <PathBox>
