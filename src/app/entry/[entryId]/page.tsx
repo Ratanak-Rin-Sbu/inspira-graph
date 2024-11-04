@@ -34,7 +34,7 @@ const Entry = ({ params }: { params: { entryId: string } }) => {
         m: "50px 0",
       }}
     >
-      <Path />
+      <Path destination="​ហាងកាហ្វេ"/>
       
       <Box
         className='khmer-text'

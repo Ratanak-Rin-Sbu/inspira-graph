@@ -5,6 +5,10 @@ import { Box } from '@mui/material'
 import styled from '@emotion/styled';
 import { useRouter } from 'next/navigation';
 
+type TopicProps = {
+  destination: string;
+};
+
 const PathBox = styled(Box)(({}) => ({
   position: "relative",
   overflow: "hidden",
@@ -24,7 +28,7 @@ const PathBox = styled(Box)(({}) => ({
   },
 }));
 
-const Path = () => {
+const Path: React.FC<TopicProps> = ({ destination }) => {
   const router = useRouter();
 
   const navigatePage = () => {
@@ -47,7 +51,7 @@ const Path = () => {
       </PathBox>
       <Box mr="10px">{">"}</Box>
       <PathBox>
-      ​ហាងកាហ្វេ
+        {destination}
       </PathBox>
     </Box>
   )
