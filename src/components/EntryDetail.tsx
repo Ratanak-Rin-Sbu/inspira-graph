@@ -9,6 +9,7 @@ const EntryDetail = () => {
     <Box
       sx={{
         borderRadius: "5px",
+        borderColor: "#e5e7eb",
         background: "#E4E0E1",
         p: {
           md: "20px 50px",
