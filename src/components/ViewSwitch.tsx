@@ -1,10 +1,13 @@
 "use client"
 import React, { useState } from 'react'
-import { Box, TextField, Select, MenuItem, ListItemIcon, ListItemText, IconButton, Button } from '@mui/material'
-import { Add, Image, DragHandle } from '@mui/icons-material';
+import { Box, TextField, Select, MenuItem, IconButton, Button } from '@mui/material'
+import { Add, DragHandle } from '@mui/icons-material';
+import ImageIcon from '@mui/icons-material/Image'
 import styled from '@emotion/styled';
-import { DndProvider, useDrag, useDrop, DropTargetMonitor } from 'react-dnd';
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+
+import ImageCover from './ImageCover';
 
 interface Block {
   id: number;
@@ -30,7 +33,7 @@ const DraggableBlock: React.FC<DraggableBlockProps> = ({ id, content, moveBlock 
 
   const [, drop] = useDrop({
     accept: ItemType.BLOCK,
-    hover: (item: { id: number }, monitor: DropTargetMonitor) => {
+    hover: (item: { id: number }) => {
       if (item.id !== id) {
         moveBlock(item.id, id);
       }
@@ -83,8 +86,8 @@ const ViewSwitch = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
-  const handleAddTextBlock = (event:any) => {
-    if (event.target.value === 1) {
+  const handleAddTextBlock = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (Number(event.target.value) === 1) {
       setBlocks((prevBlocks) => [
         ...prevBlocks,
         {
@@ -186,11 +189,7 @@ const ViewSwitch = () => {
             display: 'flex',
           }}>
             <DragHandle sx={{ mr: '10px', color: 'gray', }}/>
-            <img 
-              src={imageUrl} 
-              alt="Uploaded" 
-              style={{ maxWidth: '100%', }} 
-            />,
+            <ImageCover imgSrc={imageUrl}/>
           </Box>
       },
     ]);
@@ -339,7 +338,7 @@ const ViewSwitch = () => {
                 </Select>
               </Box>
               <label htmlFor='imageUpload'>
-                <Image sx={{mr: '20px', color: '#5BBCFF', cursor: 'pointer'}}/>
+                <ImageIcon sx={{mr: '20px', color: '#5BBCFF', cursor: 'pointer'}}/>
               </label>
               <input
                 type="file"

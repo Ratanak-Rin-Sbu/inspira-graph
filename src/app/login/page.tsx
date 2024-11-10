@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import styles from './loginPage.module.css';
 
-const page = () => {
+const Login = () => {
   const router = useRouter();
 
   const navigatePage = () => {
@@ -37,4 +37,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Login

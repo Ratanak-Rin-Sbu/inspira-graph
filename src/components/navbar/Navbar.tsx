@@ -10,10 +10,6 @@ import Auth from '../auth/Auth';
 const Navbar = () => {
   const router = useRouter();
 
-  const navigatePage = () => {
-    router.push('/');
-  };
-
   return (
     <div className={`${styles.container} khmer-text text-3xl`}>
       <div className={styles.logo} onClick={() => router.push('/')}>អក្ខរាវិរុទ្ធ</div>

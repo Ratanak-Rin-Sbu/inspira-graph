@@ -21,8 +21,9 @@ const dummyTexts = [
   },
 ];
 
-const Entry = ({ params }: { params: { entryId: string } }) => {
-  const { entryId } = params;
+// const Entry = ({ params }: { params: { entryId: string } }) => {
+const Entry = () => {
+  // const { entryId } = params;
 
   return (
     <Box 
