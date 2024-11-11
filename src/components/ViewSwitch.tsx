@@ -1,6 +1,6 @@
 "use client"
-import React, { useState } from 'react'
-import { Box, TextField, Select, MenuItem, IconButton, Button } from '@mui/material'
+import React, { ReactNode, useState } from 'react'
+import { Box, TextField, Select, MenuItem, IconButton, Button, SelectChangeEvent } from '@mui/material'
 import { Add, DragHandle } from '@mui/icons-material';
 import ImageIcon from '@mui/icons-material/Image'
 import styled from '@emotion/styled';
@@ -8,6 +8,8 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import ImageCover from './ImageCover';
+import EntryDetail from './EntryDetail';
+import TextCover from './TextCover';
 
 interface Block {
   id: number;
@@ -72,7 +74,161 @@ const ViewSwitch = () => {
     setActiveView(view);
   }
 
-  const [blocks, setBlocks] = useState<Block[]>([]);
+  const [blocks, setBlocks] = useState<Block[]>([
+    {
+      id: 1,
+      type: 'image',
+      content: 
+        <Box sx={{
+          mb: '25px',
+          display: 'flex',
+        }}>
+          <DragHandle sx={{ mr: '10px', color: 'gray', }}/>
+          <ImageCover imgSrc='/images/cafe.jpg'/>
+        </Box>
+    },
+    {
+      id: 2,
+      type: 'text',
+      content: 
+        <Box mb='25px'>
+          <Box display='flex' alignItems='center' m='auto 0'>
+            <DragHandle sx={{ mr: '10px', color: 'gray' }}/>
+            <Box className='khmer-text' sx={{ fontSize: '1.2rem', mb: '0', }}>
+              កថាខណ្ឌ
+            </Box>
+          </Box>
+          <TextField 
+            multiline 
+            placeholder="សរសេរកថាខណ្ឌនៅទីនេះ..." 
+            fullWidth
+            value='នៅក្នុងក្រសោបនៃក្លិនកាហ្វេក្តៅនិងនំផ្អែមស្រទន់ ស៊ីសូគឺជាទីកន្លែងសម្រាប់អ្នកដែលស្វែងរកភាពស្ងប់ស្ងាត់ និងភាពកក់ក្ដៅក្នុងការសម្រាកចិត្ត។ បរិយាកាសនៅទីនេះប្រៀបដូចមិត្តភក្តិដែលបង្រួមចិត្តមកជុំគ្នា។'
+            sx={{
+              '.MuiInputLabel-root': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                letterSpacing: '0.05em',
+                lineHeight: '1.8',
+              },
+              '.MuiInputLabel-shrink': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              },
+              '.MuiInputBase-root': {
+                fontSize: '1.2rem',
+                '& .MuiInputBase-input': {
+                  fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                  letterSpacing: '0.05em',
+                  lineHeight: '1.8',
+                },
+              },
+            }}
+          />
+        </Box>
+    },
+    {
+      id: 3,
+      type: 'image',
+      content: 
+        <Box sx={{
+          mb: '25px',
+          display: 'flex',
+        }}>
+          <DragHandle sx={{ mr: '10px', color: 'gray', }}/>
+          <ImageCover imgSrc='/images/cafe2.png'/>
+        </Box>
+    },
+    {
+      id: 4,
+      type: 'text',
+      content: 
+        <Box mb='25px'>
+          <Box display='flex' alignItems='center' m='auto 0'>
+            <DragHandle sx={{ mr: '10px', color: 'gray' }}/>
+            <Box className='khmer-text' sx={{ fontSize: '1.2rem', mb: '0', }}>
+              កថាខណ្ឌ
+            </Box>
+          </Box>
+          <TextField 
+            multiline 
+            placeholder="សរសេរកថាខណ្ឌនៅទីនេះ..." 
+            fullWidth
+            value='នៅលើកៅអីដែលធ្វើពីឈើដែលមានភាពរឹងមាំ អ្នកអាចសម្រួលនឹងការញ៉ាំនំនិងផឹកកាហ្វេដែលមិនមានអ្វីតែពិតប្រាកដជាងនេះ។ អរគុណដែលស៊ីសូ បាននាំយើងជិតស្និទ្ធជាមួយអារម្មណ៍ត្រជាក់ក្តៅបែបជីវិតនេះ។'
+            sx={{
+              '.MuiInputLabel-root': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                letterSpacing: '0.05em',
+                lineHeight: '1.8',
+              },
+              '.MuiInputLabel-shrink': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              },
+              '.MuiInputBase-root': {
+                fontSize: '1.2rem',
+                '& .MuiInputBase-input': {
+                  fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                  letterSpacing: '0.05em',
+                  lineHeight: '1.8',
+                },
+              },
+            }}
+          />
+        </Box>
+    },
+    {
+      id: 5,
+      type: 'image',
+      content: 
+        <Box sx={{
+          mb: '25px',
+          display: 'flex',
+        }}>
+          <DragHandle sx={{ mr: '10px', color: 'gray', }}/>
+          <ImageCover imgSrc='/images/cafe3.jpg'/>
+        </Box>
+    },
+    {
+      id: 6,
+      type: 'text',
+      content: 
+        <Box mb='25px'>
+          <Box display='flex' alignItems='center' m='auto 0'>
+            <DragHandle sx={{ mr: '10px', color: 'gray' }}/>
+            <Box className='khmer-text' sx={{ fontSize: '1.2rem', mb: '0', }}>
+              កថាខណ្ឌ
+            </Box>
+          </Box>
+          <TextField 
+            multiline 
+            placeholder="សរសេរកថាខណ្ឌនៅទីនេះ..." 
+            fullWidth
+            value='ដូចជាកន្លែងបោះតង់អាស្រ័យ ស៊ីសូនាំមកនូវបេះដូងកណ្តាលទីក្រុងដែលពោរពេញដោយចំណងជីវិត។ នំស្រួយៗនិងកាហ្វេក្តៅអាចធ្វើឱ្យការរស់នៅមានន័យខ្លាំងឡើងក្នុងក្លិនស្រទន់នៃអាហារដែលឆ្ងាញ់។'
+            sx={{
+              '.MuiInputLabel-root': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                letterSpacing: '0.05em',
+                lineHeight: '1.8',
+              },
+              '.MuiInputLabel-shrink': {
+                fontSize: '1.2rem',
+                fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+              },
+              '.MuiInputBase-root': {
+                fontSize: '1.2rem',
+                '& .MuiInputBase-input': {
+                  fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                  letterSpacing: '0.05em',
+                  lineHeight: '1.8',
+                },
+              },
+            }}
+          />
+        </Box>
+    },
+  ]);
 
   const moveBlock = (dragId: number, hoverId: number) => {
     const dragIndex = blocks.findIndex((block) => block.id === dragId);
@@ -86,7 +242,7 @@ const ViewSwitch = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
-  const handleAddTextBlock = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAddTextBlock = (event: SelectChangeEvent<string>, child: ReactNode) => {
     if (Number(event.target.value) === 1) {
       setBlocks((prevBlocks) => [
         ...prevBlocks,
@@ -145,19 +301,21 @@ const ViewSwitch = () => {
                 fullWidth
                 sx={{
                   '.MuiInputLabel-root': {
-                    fontSize: '1rem',
+                    fontSize: '1.2rem',
                     fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-                    lineHeight: '1.2',
+                    letterSpacing: '0.05em',
+                    lineHeight: '1.8',
                   },
                   '.MuiInputLabel-shrink': {
-                    fontSize: '1rem',
+                    fontSize: '1.2rem',
                     fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
                   },
                   '.MuiInputBase-root': {
-                    fontSize: '1rem',
+                    fontSize: '1.2rem',
                     '& .MuiInputBase-input': {
                       fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
-                      lineHeight: '1.2',
+                      letterSpacing: '0.05em',
+                      lineHeight: '1.8',
                     },
                   },
                 }}
@@ -197,6 +355,36 @@ const ViewSwitch = () => {
 
   const handleToggle = () => {
     setOpen((prev) => !prev);
+  };
+
+  const renderBlockContentWithoutDragHandle = (content: React.ReactElement) => {
+    return React.cloneElement(content, {
+      children: React.Children.map(content.props.children, (child) => {
+        return child.type === DragHandle ? null : child;
+      }),
+    });
+  };
+
+  const handleReadBlock = (block: Block): React.ReactElement => {
+    if (block.type === 'image' && React.isValidElement(block.content)) {
+      const contentElement = block.content as React.ReactElement;
+  
+      const imageCover = React.Children.toArray(contentElement.props.children).find(
+        (child) => React.isValidElement(child) && child.type === ImageCover
+      ) as React.ReactElement<{ imgSrc: string }>;
+  
+      return <ImageCover imgSrc={imageCover?.props.imgSrc} />;
+    } else if (block.type === 'text' && React.isValidElement(block.content)) {
+      const contentElement = block.content as React.ReactElement;
+  
+      const textField = React.Children.toArray(contentElement.props.children).find(
+        (child) => React.isValidElement(child) && child.type === TextField
+      ) as React.ReactElement<{ value: string }>;
+  
+      return <TextCover text={textField?.props.value} />;
+    }
+  
+    return <></>;
   };
 
   return (
@@ -394,9 +582,44 @@ const ViewSwitch = () => {
             )}
           </Box>
         ) : (
-          <Box>
-            {/* Preview Content */}
-            <p>Here is the Application content...</p>
+          // Preview content
+          <Box>                
+            <Box
+              className='khmer-text'
+              sx={{
+                fontSize: {
+                  xs: '1.5rem',
+                  md: '2rem',
+                },
+                mb: "10px",
+              }}
+            >
+              ស៊ីសូកាហ្វេ - កន្លែងសម្រាកសម្រាប់ការងារសង្គម និងការផ្តល់បទពិសោធន៍ថ្មីៗនៅកម្រិតខ្ពស់
+            </Box>
+      
+            <Box
+              className='khmer-text'
+              sx={{
+                fontSize: {
+                  xs: '1rem',
+                  md: '1.2rem',
+                },
+                color: "#808080",
+                fontStyle: "italic",
+                mb: "20px",
+              }}
+            >
+              ថ្ងៃព្រហស្បតិ៍ ទី៣១ ខែតុលា ឆ្នាំ២០២៤
+            </Box>
+      
+            <EntryDetail />
+
+            {blocks.map((block) => (
+              // <Box key={block.id}>
+              //   {renderBlockContentWithoutDragHandle(block.content)}
+              // </Box>
+              handleReadBlock(block)
+            ))}
           </Box>
         )}
       </Box>
