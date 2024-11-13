@@ -1,6 +1,6 @@
 "use client"
-import React, { ReactNode, useState } from 'react'
-import { Box, TextField, Select, MenuItem, IconButton, Button, SelectChangeEvent } from '@mui/material'
+import React, { ReactNode, useRef, useState } from 'react'
+import { Box, TextField, Select, MenuItem, IconButton, Button, SelectChangeEvent, FormControl, InputLabel } from '@mui/material'
 import { Add, DragHandle } from '@mui/icons-material';
 import ImageIcon from '@mui/icons-material/Image'
 import styled from '@emotion/styled';
@@ -239,8 +239,12 @@ const ViewSwitch = () => {
     setBlocks(updatedBlocks);
   };
 
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null);
+
+  const [openTopic, setOpenTopic] = useState(false);
+  const [topic, setTopic] = useState('');
+  
 
   const handleAddTextBlock = (event: SelectChangeEvent<string>, child: ReactNode) => {
     if (Number(event.target.value) === 1) {
@@ -386,6 +390,7 @@ const ViewSwitch = () => {
   
     return <></>;
   };
+  
 
   return (
     <Box sx={{ mt: "40px", mb: "20px", display: "flex", flexDirection: "column"}}>
@@ -471,6 +476,58 @@ const ViewSwitch = () => {
                 },
               }}
             />
+
+            <br></br>
+
+            <FormControl sx={{ minWidth: '130px', mb: '20px' }}>
+              <InputLabel
+                sx={{
+                  fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                  lineHeight: '1.8',
+                  letterSpacing: '0.07em',
+                  fontSize: '1rem',
+                  // display: topic === '' ? 'block' : 'none',
+                }}
+              >
+                ប្រធានបទ
+              </InputLabel>
+              <Select
+                onChange={(e: SelectChangeEvent<string>) => setTopic(e.target.value)}
+                open={openTopic}
+                onOpen={() => setOpenTopic(true)}
+                onClose={() => setOpenTopic(false)}
+                label='ប្រធានបទ'
+                sx={{
+                  fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                  lineHeight: '1.8',
+                  letterSpacing: '0.07em',
+                  fontSize: '1rem',
+                }}
+              >
+                <MenuItem
+                  value='ហាងកាហ្វេ'
+                  sx={{
+                    fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                    lineHeight: '1.8',
+                    letterSpacing: '0.07em',
+                    fontSize: '1rem',
+                  }}
+                >
+                  ហាងកាហ្វេ
+                </MenuItem>
+                <MenuItem
+                  value='ហាងអាហារ'
+                  sx={{
+                    fontFamily: 'var(--font-noto-serif-khmer), sans-serif',
+                    lineHeight: '1.8',
+                    letterSpacing: '0.07em',
+                    fontSize: '1rem',
+                  }}
+                >
+                  ហាងអាហារ
+                </MenuItem>
+              </Select>
+            </FormControl>
 
             <Box
               sx={{
@@ -615,9 +672,6 @@ const ViewSwitch = () => {
             <EntryDetail />
 
             {blocks.map((block) => (
-              // <Box key={block.id}>
-              //   {renderBlockContentWithoutDragHandle(block.content)}
-              // </Box>
               handleReadBlock(block)
             ))}
           </Box>
