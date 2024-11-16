@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Box } from '@mui/material';
-import { LocationOn, Call, Language, Instagram } from '@mui/icons-material';
+import { LocationOn, Call, Language, Instagram, Category } from '@mui/icons-material';
 
 const EntryDetail = () => {
   return (
@@ -38,7 +38,7 @@ const EntryDetail = () => {
             color: "black",
           }}
         >
-          សង្កាត់បឹងកេងកងទី៣ ខណ្ឌបឹងកេងកង
+          ទីតាំង: សង្កាត់បឹងកេងកងទី៣ ខណ្ឌបឹងកេងកង
         </Box>
       </Box>
       <Box
@@ -58,7 +58,7 @@ const EntryDetail = () => {
             color: "black",
           }}
         >
-          ០១០-៦៨៧-១១១
+          លេខទំនាក់ទំនង: ០១០-៦៨៧-១១១
         </Box>
       </Box>
       <Box
@@ -105,6 +105,26 @@ const EntryDetail = () => {
           onClick={() => window.open('https://www.instagram.com/sisobakerycambodia/', '_blank')}
         >
           អ៊ីនស្តាក្រាម
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          mb: "10px",
+        }}
+      >
+        <Category sx={{mr: "15px"}}/>
+        <Box
+          className='khmer-text'
+          sx={{
+            fontSize: {
+              xs: '1rem',
+              md: '1rem',
+            },
+            color: "black",
+          }}
+        >
+          ប្រធានបទ​: ហាងកាហ្វេ
         </Box>
       </Box>
     </Box>
